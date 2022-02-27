@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GolmanSanch</string>
+    <string name="title_favourites">Favourites</string>
+    <string name="title_home">Home</string>
+    <string name="publish_date_and_copyright">Publish Date: %1$s\n© %2$s</string>
+    <string name="apod_text">ASTRONAUTS PICS OF:  %1$s</string>
+    <string name="no_favoutire">You don\'t have favourite listing!!</string>
+    <string name="video_load_error">\"Error loading video!, Try after sometime\"</string>
+    <string name="title_activity_youtube_player">YoutubePlayerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="youtube_not_installed">\"Please install YouTube to play video\"</string>
+</resources>
