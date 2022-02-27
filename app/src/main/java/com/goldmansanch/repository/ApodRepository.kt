@@ -21,4 +21,6 @@ interface ApodRepository
 
     suspend fun deleteFav(apod: APODItem): Int
 
+    suspend fun getLastCachedAPODItem(): APODItem?
+
 }

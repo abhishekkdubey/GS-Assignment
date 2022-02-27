@@ -12,6 +12,7 @@ import com.goldmansanch.util.DateUtil
 import com.goldmansanch.util.Keys
 import com.goldmansanch.util.NetworkUtil
 import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject
@@ -105,9 +106,9 @@ class ApodRepositoryImpl @Inject constructor(
     }
 
 
-    override suspend fun markFavourite(apod: APODItem, isFav: Boolean): Long
+    override suspend fun markFavourite(apod: APODItem, isFavourite: Boolean): Long
     {
-        return if (isFav) apdDao.insert(apod.toApod())
+        return if (isFavourite) apdDao.insert(apod.toApod())
         else deleteFav(apod).toLong()
     }
 
@@ -132,6 +133,18 @@ class ApodRepositoryImpl @Inject constructor(
             null
         }
     }
+
+     override suspend fun getLastCachedAPODItem(): APODItem?
+     {
+         return try {
+             val apod: Apod? =
+                 Gson().fromJson(preference.getString(Constants.TODAYS_APOD_KEY, ""), Apod::class.java)
+             apod?.toAPODItem( apdDao.checkIfAPODAvailableNyDate(apod.date) > 0)
+         }catch (e: JsonSyntaxException){
+             null
+         }
+    }
+
 
     private fun getAPODFromDBCache(date: String): APODItem?
     {

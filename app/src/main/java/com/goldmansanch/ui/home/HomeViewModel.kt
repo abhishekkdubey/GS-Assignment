@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.goldmansanch.data.APODItem
 import com.goldmansanch.data.Error
+import com.goldmansanch.data.Response
 import com.goldmansanch.repository.ApodRepository
 import com.goldmansanch.util.DateUtil
 import com.golmansanch.R
@@ -34,38 +35,58 @@ class HomeViewModel @Inject constructor(
     val error: LiveData<Pair<Boolean, Error>> = _error
 
 
-    fun getTodayDate(): String{
-     return  dateUtil.getTodayDate()
+    fun getTodayDate(): String
+    {
+        return dateUtil.getTodayDate()
     }
+
     fun fetchAPOD(date: String)
     {
         viewModelScope.launch(Dispatchers.IO) {
             apodRepository.getAPODByDate(date) { result ->
-                if (result.data!=null && result.isSuccess)
+                if (result.data != null && result.isSuccess)
                 {
                     _error.postValue(Pair(false, getError(result.code, result.message)))
-                    _apod.postValue(result.data!!)
+                    result.data.let { _apod.postValue(it) }
                 } else
                 {
-                    _error.postValue(
-                        Pair(
-                            true,
-                            getError(result.code, result.message)
-                        )
-                    )
+                    handleError(result)
                 }
             }
         }
     }
 
+    private fun handleError(result: Response<APODItem>)
+    {
+        viewModelScope.launch(Dispatchers.IO) {
+            val apodLastCacheData = apodRepository.getLastCachedAPODItem()
+            if (apodLastCacheData != null)
+            {
+                apodLastCacheData.let { _apod.postValue(it) }
+            } else
+            {
+                _error.postValue(
+                    Pair(
+                        true,
+                        getError(result.code, result.message)
+                    )
+                )
+            }
+        }
+    }
+
+
     private fun getError(code: String?, s: String?): Error
     {
-       return when(code){
-            "400"->{
-                Error(s?:"No Internet! Check your connection", R.drawable.ic_no_connection)
+        return when (code)
+        {
+            "400" ->
+            {
+                Error(s ?: "No Internet! Check your connection", R.drawable.ic_no_connection)
             }
-            else ->{
-                Error(s?:"Something not right!!, Please try Again", R.drawable.ic_generic_error)
+            else ->
+            {
+                Error(s ?: "Something not right!!, Please try Again", R.drawable.ic_generic_error)
             }
         }
     }
