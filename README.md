@@ -57,15 +57,15 @@ User can mark any picture as unfavourite. Which leads to remove that particular 
 ## Screenshots
 
 ### Light Mode
-![LightMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_01.jpeg)
-![LightMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_02.jpeg)
-![LightMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_03.jpeg)
+![LightMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_01.jpg)
+![LightMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_02.jpg)
+![LightMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/LightMode_03.jpg)
 
 ### Dark Mode
 
-![DarkMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_01.jpeg)
-![DarkMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_02.jpeg)
-![DarkMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_03.jpeg)
+![DarkMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_01.jpg)
+![DarkMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_02.jpg)
+![DarkMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/pics/DarkMode_03.jpg)
 
 
 
