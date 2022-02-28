@@ -53,6 +53,14 @@ As soon as user mark any APOD as favoutire. The data will store in room perstent
 
 User can mark any picture as unfavourite. Which leads to remove that particular APOD from Room DB.  
 
+## Media Display Rule
+As of now, If media type is **image** then loading that image with ImageLoader component(Glide).
+In case of media type **video**, It's youtube video. So, preparing loading youtube video thumbnail from prepared URL: `"https://img.youtube.com/vi/<VideoId>/0.jpg"` and load with ImageLoader with play button enabled.
+
+On click of Play button for video type thumbnail. It'll check if youtube is installed, directly play video in youtube app with full screen mode.
+
+**NOTE:** In case, There is a requirement to play video within app, we can integrate youtube API. Which required app registration in Google API Console. 
+
 
 ## Screenshots
 
