@@ -43,6 +43,17 @@ To Design this app, I have followed industry best practice design pattern and us
 
 **Storage**: Used Jetpack Room persistence library and SharedPreference.
 
+
+## Storage Rule
+Based on hypothesis, I have implementd the two different storage option. One is Room DB and another is SharedPreference. Room DB store favourite listing but Shared preference store today's APOD JSON as key-value pair.
+
+Search APOD by date will not be cached in persistance until it mark as favourite. 
+
+As soon as user mark any APOD as favoutire. The data will store in room perstent storage. Which will be served to Favourite screen. 
+
+User can mark any picture as unfavourite. Which leads to remove that particular APOD from Room DB.  
+
+
 ## Screenshots
 
 ### Light Mode
