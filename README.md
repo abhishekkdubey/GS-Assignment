@@ -32,3 +32,30 @@ The possible solution for project is described in High-Level Diagram.
 
 **UI/UX**: Defined User experience. These derived mainly using Jetpack navigation Graph
 
+## Detailed Design Flow
+To Design this app, I have followed industry best practice design pattern and used android jetpack components. Also, considered to support **DarkMode**.
+
+**Architecture patterns**: Used MVVM with Android jetpack ViewModel to achieve this design
+
+**Navigation and Flow**: Android Jetpack _Navigation_ component with BottomNavihationView for better user-experience and handy screen flow.
+
+**App Theme & Support Different Screen size**: Used material theme to provide support of DarkMode. And Desing of the UI component done keeping this in mind to support different screen Size.
+
+**Storage**: Used Jetpack Room persistence library and SharedPreference.
+
+## Screenshots
+
+### Light Mode
+![LightMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/LightMode_01.jpeg)
+![LightMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/LightMode_02.jpeg)
+![LightMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/LightMode_03.jpeg)
+
+### Dark Mode
+
+![DarkMode_01](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/DarkMode_01.jpeg)
+![DarkMode_02](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/DarkMode_02.jpeg)
+![DarkMode_03](https://github.com/abhishekkdubey/GS-Assignment/blob/develop/DarkMode_03.jpeg)
+
+
+
+
