@@ -102,5 +102,9 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun isValidDate(timeInMills: Long): Boolean{
+        return dateUtil.isValidDate(timeInMills)
+    }
+
 
 }

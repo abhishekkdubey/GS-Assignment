@@ -41,4 +41,14 @@ object DateUtil
         sdf.timeZone = TimeZone.getTimeZone("UTC")
         return sdf
     }
+
+    fun isValidDate(timeInMilli: Long):Boolean{
+        val startCalender = Calendar.getInstance()
+        startCalender.set(Calendar.YEAR, 1995)
+        startCalender.set(Calendar.MONTH, 6)
+        startCalender.set(Calendar.DAY_OF_MONTH, 16)
+        val endCalender = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
+        return timeInMilli>startCalender.timeInMillis && timeInMilli<endCalender.timeInMillis
+    }
+
 }

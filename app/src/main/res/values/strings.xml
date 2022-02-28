@@ -10,4 +10,5 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="youtube_not_installed">\"Please install YouTube to play video\"</string>
+    <string name="must_be_valid_date">Date must be between Jun 16, 1995 and today\'s time in UTC</string>
 </resources>

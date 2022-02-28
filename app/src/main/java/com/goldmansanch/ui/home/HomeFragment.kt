@@ -197,7 +197,15 @@ class HomeFragment : Fragment()
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             val date = DateUtil.getDate(cal)
-            fetchAPODFor(date)
+            if (homeViewModel.isValidDate(cal.timeInMillis)){
+                fetchAPODFor(date)
+            }else{
+                Snackbar.make(
+                    binding.root,
+                    getString(R.string.must_be_valid_date),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
 
     private fun fetchAPODFor(date: String)
